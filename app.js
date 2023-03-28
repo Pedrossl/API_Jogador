@@ -1,7 +1,7 @@
 import express from 'express'
-import { sequelize } from 'sequelize'
+import { sequelize } from './databases/conecta.js'
 import cors from "cors"
-import routes from '.routes.js'
+import routes from './routes.js'
 
 
 const app = express()
