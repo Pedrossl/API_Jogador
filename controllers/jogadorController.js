@@ -93,6 +93,18 @@ export const jogadorUpdate = async (req, res) => {
     } catch (error) {
       res.status(400).send(error)
     }
+  } 
+
+  export const jogadorSalarioDesc = async (req, res) => {
+
+    try {
+      const jogadores = await Jogador.findAll({
+        order: sequelize.col('salario')
+      })
+      res.status(200).json(jogadores)
+    } catch (error) {
+      res.status(400).send(error)
+    }
   }
   
   
