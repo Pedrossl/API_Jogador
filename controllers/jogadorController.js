@@ -81,3 +81,19 @@ export const jogadorUpdate = async (req, res) => {
       res.status(400).send(error)
     }
   }
+
+  export const jogadorIdade = async (req, res) => {
+    const { idade } = req.params
+
+    try {
+      const jogadores = await Jogador.findAll({
+        where:{ idade: idade }
+      })
+      res.status(200).json(jogadores)
+    } catch (error) {
+      res.status(400).send(error)
+    }
+  }
+  
+  
+  
