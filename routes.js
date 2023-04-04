@@ -9,7 +9,7 @@ router.get('/jogadores', jogadorIndex)
       .delete('/jogadores/:id', jogadorDestroy)
       .get('/jogadores/:nome', jogadorNome)
       .get('/jogadores/idade/:idade',jogadorIdade)
-      .get('/jogador/salario',jogadorSalarioDesc)
-      .get('/jogador/salarioSum',jogadorSalarioSum)
+      .get('/jogadores/salario',jogadorSalarioDesc)
+      .get('/jogadores/salarioSum',jogadorSalarioSum)
 
 export default router
