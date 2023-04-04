@@ -83,11 +83,13 @@ export const jogadorUpdate = async (req, res) => {
   }
 
   export const jogadorIdade = async (req, res) => {
-    const { idade } = req.params
+    const { idade1,idade2 } = req.params
 
     try {
       const jogadores = await Jogador.findAll({
-        where:{ idade: idade }
+        where:{ idade: {
+          [Op.between]:[idade1,idade2]
+        } }
       })
       res.status(200).json(jogadores)
     } catch (error) {
@@ -117,5 +119,18 @@ export const jogadorUpdate = async (req, res) => {
     }
   }
   
+
   
-  
+   export const jogadorPesq = async (req, res) => {
+    const { pesq} = req.params
+
+    try {
+      const jogadores = await Jogador.findAll({
+        where:{ nome,posicao,clube: pesq
+        }
+      })
+      res.status(200).json(jogadores)
+    } catch (error) {
+      res.status(400).send(error)
+    }
+  } 
