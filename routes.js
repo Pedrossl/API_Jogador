@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { jogadorIndex, jogadorCreate, jogadorUpdate, jogadorDestroy, jogadorNome, jogadorIdade, jogadorSalarioDesc } from "./controllers/jogadorController.js"
+import { jogadorIndex, jogadorCreate, jogadorUpdate, jogadorDestroy, jogadorNome, jogadorIdade, jogadorSalarioDesc, jogadorSalarioSum } from "./controllers/jogadorController.js"
 
 const router = Router()
 
@@ -10,5 +10,6 @@ router.get('/jogadores', jogadorIndex)
       .get('/jogadores/:nome', jogadorNome)
       .get('/jogadores/idade/:idade',jogadorIdade)
       .get('/jogador/salario',jogadorSalarioDesc)
+      .get('/jogador/salarioSum',jogadorSalarioSum)
 
 export default router

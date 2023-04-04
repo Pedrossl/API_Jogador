@@ -106,6 +106,16 @@ export const jogadorUpdate = async (req, res) => {
       res.status(400).send(error)
     }
   }
+
+  export const jogadorSalarioSum = async (req, res) => {
+
+    try {
+      const jogadores = await Jogador.sum('salario')
+      res.status(200).json(jogadores)
+    } catch (error) {
+      res.status(400).send(error)
+    }
+  }
   
   
   
